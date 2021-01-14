@@ -98,7 +98,8 @@ while True:
     elif event == "-TEST-": 
 
         # Refactor image path
-        path = '.'+ filename[35:] 
+        abs_path_len = os.path.abspath(os.getcwd())
+        path = '.'+ filename[len(abs_path_len):] 
 
         # Classify single image
         class_and_score = classify(path)
